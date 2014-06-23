@@ -17,6 +17,11 @@ namespace :db do
       migration.migrate(:up)
     end
   end
+
+  task :seed => :environment do
+    # needs a task to parse the files from the db/data
+  end
+
 end
 
 task :console => :environment do
