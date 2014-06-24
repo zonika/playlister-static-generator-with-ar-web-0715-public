@@ -1,6 +1,5 @@
 ENV["PLAYLISTER_ENV"] = "test"
 
-require 'capybara/rspec'
 require_relative '../config/environment'
 
 RSpec.configure do |config|
@@ -31,5 +30,5 @@ def clean_database
 end
 
 def seed_database
-  LibraryParser.parse_and_insert_songs_from(__TEST_DATABASE__)
+  LibraryParser.new().parse_and_insert_songs
 end

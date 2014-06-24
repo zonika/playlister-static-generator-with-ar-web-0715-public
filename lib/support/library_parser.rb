@@ -1,6 +1,11 @@
 class LibraryParser
+  attr_accessor :path
 
-  def self.parse_and_insert_songs_from(path)
+  def initialize(path)
+    self.path = path
+  end
+
+  def parse_and_insert_songs
     files = Dir.entries(path)[2..-1]
     files.each do |file|
       artist_name, song_name, genre_name = file.split(/\s-\s|\s\[|\]/)

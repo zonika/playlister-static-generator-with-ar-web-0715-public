@@ -34,10 +34,12 @@ Embedded Ruby is a way of adding Ruby to a file that would normally be unable to
 
 #### Index Pages
 Each model will generally have an index page.  Often they list all instances of model
-- You will need to generate an index page for the top level of `app/views/`.
+- You will need to generate an index page for the top level of `app/views/`
+  - The index should have a link to each model and a count of total instances
+    - ex. `Artists -  42`
 - Your index pages should be called `index.html.erb`
 - Each model will have an index page in their appropriate folder in `app/views` directory
-  - This index lists every instance and links to that instances show page.
+  - This index lists every instance and links to that instances show page
 
 #### Show Pages
 An instance of a model will often have `show.html.erb` that is rendered as a regular HTML file with information specific to that instance.
@@ -46,6 +48,9 @@ An instance of a model will often have `show.html.erb` that is rendered as a reg
 - `Genre` show pages will have a list of and link to its songs.
 - `Song` show pages will state the instance's name.
 
+####Site Generator
+You will need a class whose sole purpose is generating the static pages.
+
 
 ## Bonus
-If you've finished everything and want more of a challenge unpend the pending RSPEC tests and create a [has many through assocciation](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association) for your models.
+If you've finished everything and want more of a challenge unpend the pending RSPEC tests and create a [has many through association](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association) for your models.
