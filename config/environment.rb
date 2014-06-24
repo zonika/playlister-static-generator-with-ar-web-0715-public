@@ -1,7 +1,6 @@
 require 'bundler/setup'
 Bundler.require
 
-
 ENV["PLAYLISTER_ENV"] ||= "development"
 
 Dir[File.join(File.dirname(__FILE__), "../lib/support", "*.rb")].each {|f| require f}

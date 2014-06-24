@@ -50,6 +50,8 @@ An instance of a model will often have `show.html.erb` that is rendered as a reg
 
 ####Site Generator
 You will need a class whose sole purpose is generating the static pages.
+- It should accept a path upon initialize to where it will save the files it generates
+- It should use the ERB files from `app/views/` to generate all static pages.
 
 
 ## Bonus

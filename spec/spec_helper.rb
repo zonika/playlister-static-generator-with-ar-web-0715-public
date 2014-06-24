@@ -30,5 +30,5 @@ def clean_database
 end
 
 def seed_database
-  LibraryParser.new().parse_and_insert_songs
+  LibraryParser.new('spec/fixtures/mp3s').parse_and_insert_songs
 end

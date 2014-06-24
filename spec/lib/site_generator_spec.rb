@@ -3,7 +3,8 @@ require 'spec_helper'
 describe SiteGenerator do
   let(:site_generator){SiteGenerator.new("./tmp/_site")}
   before do
-    LibraryParser.new('spec/fixtures/mp3s').call
+    reset_database
+    seed_database
   end
 
   it 'accepts a path to generate a site into' do
