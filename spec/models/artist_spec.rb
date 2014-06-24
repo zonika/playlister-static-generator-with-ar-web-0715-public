@@ -40,7 +40,7 @@ describe 'Artist' do
     expect(Artist.find_by(name: "Prince").songs.count).to eq(2)
   end
 
-  it 'knows about its genres' do
+  xit 'knows about its genres' do
     song = Song.create(name: "Super Hip Music")
     genre = Genre.create(name: "Soul")
     song.genre = genre

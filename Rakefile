@@ -1,6 +1,6 @@
 task :environment do
   ENV["PLAYLISTER_ENV"] ||= "development"
-  require_relative 'config/environment'
+  require_relative './config/environment'
   # require 'logger'
   # ActiveRecord::Base.logger = Logger.new(STDOUT)
 end
@@ -19,7 +19,7 @@ namespace :db do
   end
 
   task :seed => :environment do
-    # needs a task to parse the files from the db/data
+    LibraryParser.parse_and_insert_songs
   end
 
 end
