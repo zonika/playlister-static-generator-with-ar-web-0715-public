@@ -25,3 +25,7 @@ end
 task :console => :environment do
   Pry.start
 end
+
+task :generate => :environment do
+  SiteGenerator.new("_site").generate
+end
