@@ -21,7 +21,7 @@ describe 'Genre' do
     expect(found_song.genre).to eq(@genre)
   end
 
-  xit 'is also associated with an artist' do
+  it 'is also associated with an artist' do
     artist = Artist.create(name: "Fun Person Who Sings")
     song = Song.create(name: "Sweet Tunez", genre: @genre)
     artist.songs << song

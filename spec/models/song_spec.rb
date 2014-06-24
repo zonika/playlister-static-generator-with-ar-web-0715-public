@@ -36,7 +36,7 @@ describe 'Song' do
     expect(Song.where(name: "Yellow Submarine").first.artist).to eq(artist)
   end
 
-  xit 'can build genres' do
+  it 'can build genres' do
     genre = @song.build_genre(name: "Rap")
     @song.save
 
