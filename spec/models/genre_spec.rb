@@ -13,6 +13,10 @@ describe 'Genre' do
     expect(Genre.where(name: "Hip Hop").first).to eq(@genre)
   end
 
+  it "has a slugified name" do
+    expect(Genre.slugified_name).to eq("hip-hop")
+  end
+
   it 'has many songs' do
     @genre.songs << Song.create(name: "Something By That Person Who Sings Stuff")
     @genre.save

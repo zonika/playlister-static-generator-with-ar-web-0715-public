@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 
 describe 'Artist' do
   before do
-    @prince = Artist.create(name: "Prince")
+    @prince = Artist.create(name: "An Artist Formally Known As Prince")
   end
 
   after do
@@ -10,7 +10,11 @@ describe 'Artist' do
   end
 
   it 'has a name' do
-    expect(Artist.find_by(name: "Prince")).to eq(@prince)
+    expect(Artist.find_by(name: "An Artist Formally Known As Prince")).to eq(@prince)
+  end
+
+  it "has a slugified name" do
+    expect(Artist.slugified_name).to eq("an-artist-formally-known-as-prince")
   end
 
   it 'can build a song' do
@@ -37,7 +41,7 @@ describe 'Artist' do
     song_2 = Song.create(:name => "A Song By Prince 2")    
     @prince.songs << [song_1, song_2]
 
-    expect(Artist.find_by(name: "Prince").songs.count).to eq(2)
+    expect(Artist.find_by(name: "An Artist Formally Known As Prince").songs.count).to eq(2)
   end
 
   it 'knows about its genres' do

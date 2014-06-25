@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 
 describe 'Song' do
   before do
-    @song = Song.create(name: "Forever")
+    @song = Song.create(name: "Forever More")
   end
 
   after do
@@ -10,7 +10,11 @@ describe 'Song' do
   end
 
   it 'has a name' do
-    expect(Song.where(name: "Forever").first).to eq(@song)
+    expect(Song.where(name: "Forever More").first).to eq(@song)
+  end
+
+  it "has a slugified name" do
+    expect(Song.slugified_name).to eq("forever-more")
   end
 
   it 'has a genre' do
@@ -18,7 +22,7 @@ describe 'Song' do
     @song.genre = genre
     @song.save
 
-    expect(Song.find_by(name: "Forever").genre).to eq(genre)
+    expect(Song.find_by(name: "Forever More").genre).to eq(genre)
   end
 
   it 'can have an artist' do
@@ -26,7 +30,7 @@ describe 'Song' do
     @song.artist = artist
     @song.save
 
-    expect(Song.where(name: "Forever").first.artist).to eq(artist)
+    expect(Song.where(name: "Forever More").first.artist).to eq(artist)
   end
 
   it 'can be created with an artist as an attribute' do
@@ -40,7 +44,7 @@ describe 'Song' do
     genre = @song.build_genre(name: "Rap")
     @song.save
 
-    expect(Song.where(name: "Forever").first.genre).to eq(genre)
+    expect(Song.where(name: "Forever More").first.genre).to eq(genre)
     expect(Genre.where(name: "Rap").first.songs).to include(@song)
   end
 end

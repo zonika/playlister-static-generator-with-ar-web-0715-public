@@ -15,17 +15,17 @@ Using those two tools you'll create [ERB template](http://www.stuartellis.eu/art
 
 ## ActiveRecord Associations
 
-In this lab, you'll be recreating the basic functionality of Playlister using [ActiveRecord associations](http://guides.rubyonrails.org/association_basics.html). In plain English, the point of your association is to let ActiveRecord and your program know that an artist has many songs and therefore those songs belong to that artist. 
+In this lab, you'll be recreating the basic functionality of Playlister using [ActiveRecord associations](http://guides.rubyonrails.org/association_basics.html). In plain English, the point of your association is to let ActiveRecord and your program know that an artist has many songs and therefore those songs belong to that artist. An artist will also have many genres, which it will know of through songs.
 
-You'll have three models: `Artist`, `Song`, and `Genre`. The `Artist` and `Genre` model will each know about it's associated songs.  To create these associations you will need write proper migrations and ActiveRecord macros, special methods created by ActiveRecord's DSL.
+You'll have three models: `Artist`, `Song`, and `Genre`. The `Artist` and `Genre` model will each know about it's associated songs and eachother.  To create these [associations](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association) you will need write proper migrations and ActiveRecord macros, special methods created by ActiveRecord's DSL.
 
 The model tests will be calling methods that your models will, by default, have if your associations are correctly defined. You do not need to write those methods.  You also have the `rake db:seed` task defined and functioning.  Once your associations are completed you will be able to seed the database for work in development.
 
 #### Creating Your Associations
 - Create your models in `app/models`
-- Write migrations for your models and associations in `db/migrations`
 - Your models will need an instance method called `slugified_name` for making urls
   - ex. `an_artist.slugified_name #=> kanye-west`
+- Write migrations for your models and associations in `db/migrations`
 
 
 ## ERB and Static HTML Sites
@@ -53,7 +53,3 @@ You will need a class whose sole purpose is generating the static pages.
 - It should accept a path upon initialize to where it will save the files it generates
 - It should use the ERB files from `app/views/` to generate all static pages
 - It will live in `lib/support`
-
-
-## Bonus
-If you've finished everything and want more of a challenge unpend the pending RSPEC tests and create a [has many through association](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association) for your models.
