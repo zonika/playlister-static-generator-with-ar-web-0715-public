@@ -23,8 +23,8 @@ The model tests will be calling methods that your models will, by default, have 
 
 #### Creating Your Associations
 - Create your models in `app/models`
-- Your models will need an instance method called `slugified_name` for making urls
-  - ex. `an_artist.slugified_name #=> kanye-west`
+- Your models will need an instance method called `to_slug` for making urls
+  - ex. `an_artist.to_slug #=> kanye-west`
 - Write migrations for your models and associations in `db/migrations`
 
 

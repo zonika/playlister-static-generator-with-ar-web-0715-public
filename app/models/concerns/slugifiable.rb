@@ -1,6 +1,6 @@
 module Slugifiable
   module InstanceMethods
-    def slugified_name
+    def to_slug
       self.name.split(" ").collect{|x| x.downcase}.join("-")
     end
   end

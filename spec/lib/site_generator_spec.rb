@@ -32,9 +32,10 @@ describe SiteGenerator do
     artist = Artist.all.first
     site_generator.build_artist_page(artist)
 
-    page = File.read("./tmp/_site/artists/#{artist.to_param}.html")
+    page = File.read("./tmp/_site/artists/#{artist.to_slug}.html")
     expect(page).to include("Action Bronson")
     expect(page).to include("Larry Csonka")
+    expect(page).to include("indie")
   end  
 
   it 'builds an genre index' do
@@ -49,8 +50,9 @@ describe SiteGenerator do
     genre = Genre.all.first
     site_generator.build_genre_page(genre)
 
-    page = File.read("./tmp/_site/genres/#{genre.to_param}.html")
+    page = File.read("./tmp/_site/genres/#{genre.to_slug}.html")
     expect(page).to include(genre.songs.first.name)
+    expect(page).to include("Action Bronson")
   end  
 
   it 'builds an song index' do
@@ -65,7 +67,7 @@ describe SiteGenerator do
     song = Song.all.first
     site_generator.build_song_page(song)
 
-    page = File.read("./tmp/_site/songs/#{song.to_param}.html")
+    page = File.read("./tmp/_site/songs/#{song.to_slug}.html")
     expect(page).to include(song.name)
   end
 end

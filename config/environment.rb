@@ -4,6 +4,7 @@ Bundler.require
 ENV["PLAYLISTER_ENV"] ||= "development"
 
 Dir[File.join(File.dirname(__FILE__), "../lib/support", "*.rb")].each {|f| require f}
+require_relative "../app/models/concerns/slugifiable.rb"
 Dir[File.join(File.dirname(__FILE__), "../app/models", "*.rb")].each {|f| require f}
 
 DBRegistry[ENV["PLAYLISTER_ENV"]].connect!

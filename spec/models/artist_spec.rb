@@ -14,7 +14,7 @@ describe 'Artist' do
   end
 
   it "has a slugified name" do
-    expect(Artist.slugified_name).to eq("an-artist-formally-known-as-prince")
+    expect(@prince.to_slug).to eq("an-artist-formally-known-as-prince")
   end
 
   it 'can build a song' do

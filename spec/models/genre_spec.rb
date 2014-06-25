@@ -14,7 +14,7 @@ describe 'Genre' do
   end
 
   it "has a slugified name" do
-    expect(Genre.slugified_name).to eq("hip-hop")
+    expect(@genre.to_slug).to eq("hip-hop")
   end
 
   it 'has many songs' do

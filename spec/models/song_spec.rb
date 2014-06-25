@@ -14,7 +14,7 @@ describe 'Song' do
   end
 
   it "has a slugified name" do
-    expect(Song.slugified_name).to eq("forever-more")
+    expect(@song.to_slug).to eq("forever-more")
   end
 
   it 'has a genre' do

@@ -1,1 +1,1 @@
-<h1><%= @song.name %> by <a href="<%= @song.artist.slugified_name%>"><%= @song.artist.name %></a></h1>
+<h1><%= @song.name %> by <a href="<%= @song.artist.to_slug%>"><%= @song.artist.name %></a></h1>
