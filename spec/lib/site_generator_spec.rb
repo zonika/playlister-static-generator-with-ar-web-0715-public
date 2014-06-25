@@ -51,8 +51,9 @@ describe SiteGenerator do
     site_generator.build_genre_page(genre)
 
     page = File.read("./tmp/_site/genres/#{genre.to_slug}.html")
-    expect(page).to include(genre.songs.first.name)
     expect(page).to include("Action Bronson")
+    expect(page).to include("Larry Csonka")
+    expect(page).to include("indie")
   end  
 
   it 'builds an song index' do
@@ -68,6 +69,6 @@ describe SiteGenerator do
     site_generator.build_song_page(song)
 
     page = File.read("./tmp/_site/songs/#{song.to_slug}.html")
-    expect(page).to include(song.name)
+    expect(page).to include("Larry Csonka")
   end
 end
