@@ -44,9 +44,9 @@ Each model will generally have an index page.  Often they list all instances of 
 #### Show Pages
 An instance of a model will often have `show.html.erb` that is rendered as a regular HTML file with information specific to that instance.
 - Each model will have show pages in `app/views/<model>/`
-- `Artist` show pages will have a list of and link to its songs.
-- `Genre` show pages will have a list of and link to its songs.
-- `Song` show pages will state the instance's name.
+- `Artist` show pages will have the instnce's name and a list of and link to its genres and songs.
+- `Genre` show pages will have have the instnce's name and a list of and link to its artists and songs.
+- `Song` show pages will state the instance's name and names of and links to its artist and genre.
 
 ####Site Generator
 You will need a class whose sole purpose is generating the static pages.

@@ -6,3 +6,10 @@
   <li><a href="<%= artist.to_slug%>"><%= artist.name %></a></li>
 <% end %>
 </ul>
+
+<h2>Songs</h2>
+<ul>
+<% @genre.songs.each do |song| %>
+  <li><a href="<%= song.to_slug%>"><%= song.name %></a></li>
+<% end %>
+</ul>
