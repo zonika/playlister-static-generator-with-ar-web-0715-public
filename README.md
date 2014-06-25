@@ -53,3 +53,10 @@ You will need a class whose sole purpose is generating the static pages.
 - It should accept a path upon initialize to where it will save the files it generates
 - It should use the ERB files from `app/views/` to generate all static pages
 - It will live in `lib/support`
+
+##Helpful Rake Tasks
+This lab provides you with a number of Rake tasks to help you along the way.
+- `rake db:migrate` will automatically create database and run your migrations all you need to do is write the migrations
+- `rake db:seed` will automatically parse the songs and seed your database, no work required beyond migrations
+- `rake console` will load a pry session with all of your environment loaded to play with the database
+- `rake generate` will run your site generator once it is made assuming it has generate method
