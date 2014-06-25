@@ -1,7 +1,0 @@
-<h1>Songs</h1>
-
-<ul>
-  <% Song.all.each do |s| %>
-  <li><a href="<%= s.to_slug %>.html"><%= s.name %></a></li>
-  <% end %>
-</ul>
