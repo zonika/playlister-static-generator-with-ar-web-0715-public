@@ -4,6 +4,10 @@ class SiteGenerator
     self.path = path
   end
 
+  def render_template(erb_file, file_path)
+    
+  end
+
   def build_index
     
   end
