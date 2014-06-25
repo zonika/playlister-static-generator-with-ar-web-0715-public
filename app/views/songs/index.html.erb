@@ -2,6 +2,6 @@
 
 <ul>
   <% Song.all.each do |s| %>
-  <li><a href="<%= s.to_slug %>"><%= s.name %></a></li>
+  <li><a href="<%= s.to_slug %>.html"><%= s.name %></a></li>
   <% end %>
 </ul>
