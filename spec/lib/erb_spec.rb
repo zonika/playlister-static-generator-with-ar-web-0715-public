@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe "ERB Templates" do
-  let(:abs_path) { "#{Dir.pwd}/app/views/" }
+  let(:abs_path) { "#{Dir.pwd}/app/views" }
 
   it "artists page lists genres directly from its associations" do
     artist_page_content = File.read("#{abs_path}/artists/show.html.erb")
