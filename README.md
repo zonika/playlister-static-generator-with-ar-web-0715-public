@@ -8,18 +8,18 @@ level: advanced
 # Static Playlister on ActiveRecord
 
 ## Welcome to the Web!
-In this lab, you're going to making some sweet static websites.  Static means no Rails or Sinatra.  Instead you're going to use two resources that both depend on to make dynamic websites, ActiveRecord and [ERB](http://ruby-doc.org/stdlib-2.1.2/libdoc/erb/rdoc/ERB.html).
+In this lab, you're going to making some sweet static websites.  Static means no server is needed, so you're not using Rails or Sinatra.  You're going to use ActiveRecord and [ERB](http://ruby-doc.org/stdlib-2.1.2/libdoc/erb/rdoc/ERB.html) to generate regular html web pages.
 
-Using those two tools you'll create [ERB template](http://www.stuartellis.eu/articles/erb/) files that end in `.html.erb`.  This will be where you can call your ActiveRecord models - `Artist`, `Genre`, and `Song` - to access all the information stored in your database about each one.
+Using ActiveRecord and ERB you'll create [ERB template](http://www.stuartellis.eu/articles/erb/) files that end in `.html.erb` where you can call your ActiveRecord models - `Artist`, `Genre`, and `Song` - to access all the information stored in your database.
 
 
 ## ActiveRecord Associations
 
-In this lab, you'll be recreating the basic functionality of Playlister using [ActiveRecord associations](http://guides.rubyonrails.org/association_basics.html). In plain English, the point of your association is to let ActiveRecord and your program know that an artist has many songs and therefore those songs belong to that artist. An artist will also have many genres, which it will know of through songs.
+In this lab, you'll be recreating the basic functionality of Playlister using [ActiveRecord associations](http://guides.rubyonrails.org/association_basics.html). The point of your association is to let your program know that an artist has many songs and therefore those songs belong to that artist. An artist will also have many genres, which it will know of through songs, so `Artist.genres`
 
 You'll have three models: `Artist`, `Song`, and `Genre`. The `Artist` and `Genre` model will each know about it's associated songs and eachother.  To create these [associations](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association) you will need write proper migrations and ActiveRecord macros, special methods created by ActiveRecord's DSL.
 
-The model tests will be calling methods that your models will, by default, have if your associations are correctly defined. You do not need to write those methods.  You also have the `rake db:seed` task defined and functioning.  Once your associations are completed you will be able to seed the database for work in development.
+The model tests will be calling methods that your models will, by default, have if your associations are correctly defined. You do not need to write those methods. Once your associations are defined you you can run `rake db:seed` to seed your database with sample data.
 
 #### Creating Your Associations
 - Create your models in `app/models`
@@ -30,7 +30,7 @@ The model tests will be calling methods that your models will, by default, have 
 
 ## ERB and Static HTML Sites
 
-Embedded Ruby is a way of adding Ruby to a file that would normally be unable to run the language.  It had become synonymous with Rails because it relies on ERB so much, but you'll be making your own generator that will read an HTML ERB file to create many static pages.
+Embedded Ruby(ERB) is a way of running Ruby in non `.rb` files. You'll be making your own generator that will read an HTML.ERB file to generate many static pages.
 
 #### Index Pages
 Each model will generally have an index page.  Often they list all instances of model
