@@ -3,6 +3,7 @@ require_relative '../spec_helper'
 describe 'Song' do
   before do
     @song = Song.create(name: "Forever More")
+    @rude = Song.create(name: "Rude")
   end
 
   after do
@@ -15,6 +16,7 @@ describe 'Song' do
 
   it "has a slugified name" do
     expect(@song.to_slug).to eq("forever-more")
+    expect(@rude.to_slug).to eq("rude")
   end
 
   it 'has a genre' do

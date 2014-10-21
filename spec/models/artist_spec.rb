@@ -3,6 +3,7 @@ require_relative '../spec_helper'
 describe 'Artist' do
   before do
     @prince = Artist.create(name: "An Artist Formally Known As Prince")
+    @madonna = Artist.create(name: "Madonna")
   end
 
   after do
@@ -15,6 +16,7 @@ describe 'Artist' do
 
   it "has a slugified name" do
     expect(@prince.to_slug).to eq("an-artist-formally-known-as-prince")
+    expect(@madonna.to_slug).to eq("madonna")
   end
 
   it 'can build a song' do

@@ -3,6 +3,7 @@ require_relative '../spec_helper'
 describe 'Genre' do
   before do
     @genre = Genre.create(name: "Hip Hop")
+    @classical = Genre.create(name: "Classical")
   end
 
   after do
@@ -15,6 +16,7 @@ describe 'Genre' do
 
   it "has a slugified name" do
     expect(@genre.to_slug).to eq("hip-hop")
+    expect(@classical.to_slug).to eq("classical")
   end
 
   it 'has many songs' do
