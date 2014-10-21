@@ -32,6 +32,36 @@ The model tests will be calling methods that your models will, by default, have 
 
 Embedded Ruby(ERB) is a way of running Ruby in non `.rb` files. You'll be making your own generator that will read an HTML.ERB file to generate many static pages.
 
+### Folder structure
+Your template files will be in the following structure:
+
+```
+app/views
+├── artists
+│   ├── index.html.erb
+│   └── show.html.erb
+├── genres
+│   ├── index.html.erb
+│   └── show.html.erb
+├── index.html.erb
+└── songs
+    ├── index.html.erb
+    └── show.html.erb
+```
+
+You processed files will be in the following structure:
+
+```
+_site
+├── artists
+│   └── index.html
+├── genres
+│   └── index.html
+├── index.html
+└── songs
+    └── index.html
+```
+
 #### Index Pages
 Each model will generally have an index page.  Often they list all instances of model
 - You will need to generate an index page for the top level of `app/views/`
@@ -40,6 +70,7 @@ Each model will generally have an index page.  Often they list all instances of 
 - Your index pages should be called `index.html.erb`
 - Each model will have an index page in their appropriate folder in `app/views` directory
   - This index lists every instance and links to that instances show page
+
 
 #### Show Pages
 An instance of a model will often have `show.html.erb` that is rendered as a regular HTML file with information specific to that instance.
