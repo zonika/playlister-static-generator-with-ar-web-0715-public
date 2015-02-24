@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SiteGenerator do
+describe 'SiteGenerator' do
   let(:site_generator){SiteGenerator.new("./tmp/_site")}
   before do
     reset_database
@@ -36,7 +36,7 @@ describe SiteGenerator do
     expect(page).to include("Action Bronson")
     expect(page).to include("Larry Csonka")
     expect(page).to include("indie")
-  end  
+  end
 
   it 'builds an genre index' do
     site_generator.build_genres_index
@@ -54,7 +54,7 @@ describe SiteGenerator do
     expect(page).to include("Action Bronson")
     expect(page).to include("Larry Csonka")
     expect(page).to include("indie")
-  end  
+  end
 
   it 'builds an song index' do
     site_generator.build_songs_index
