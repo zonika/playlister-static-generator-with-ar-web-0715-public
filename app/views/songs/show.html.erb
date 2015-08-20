@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <%= song.name %>
+  <a href="../artists/<%= song.artist.to_slug %>.html"><%=song.artist.name%></a>
+  <a href="../genres/<%= song.genre.to_slug %>.html"><%=song.genre.name%></a>
+</body>
+</html>

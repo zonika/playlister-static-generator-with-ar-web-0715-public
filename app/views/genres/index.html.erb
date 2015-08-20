@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <% Genre.all.each do |genre| %>
+  <a href="<%= genre.to_slug %>.html"><%= genre.name %></a>
+  <% end %>
+</body>
+</html>
